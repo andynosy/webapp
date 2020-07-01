@@ -27,6 +27,14 @@ pipeline {
 	 
   }
 
+    stage ('Deploy-To-Tomcat') {
+	  steps{
+	     
+		 sh SCP StrictHostKeyChecking=no /target/*.war ec2-user@ec2-user@ec2-34-201-61-174.compute-1.amazonaws.com:/home/andylab/prod/apache-tomcat-8.5.43/webapps
+	  
+	  }
+	
+	}
 
 }
 
